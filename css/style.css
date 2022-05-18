@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    min-height: 100vh;
+    background: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: sans-serif;
+    gap: 4rem;
+    background: #40E0D0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    flex-wrap: wrap;
+}
+
+.unknown{
+    height:15rem;
+    width:15rem;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    background:#eee;
+    position:absolute;
+    bottom:0%;
+    left:50%;
+    transform:translate(-50%,50%);
+    border: 0.5rem solid rgba(255,255,255,1);
+}
+
+.unknown__face{
+    width:40%;
+    height:40%;
+    background:white;
+    border-radius: 50%;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    z-index: 1;
+
+}
+
+.unknown__body{
+    width:80%;
+    height:60%;
+    background:white;
+    border-radius:50%;
+    position: absolute;
+    top:75%;
+    left: 50%;
+    transform:translateX(-50%);
+
+}
+
+.profile{
+    width:20rem;
+    height:auto;
+    box-shadow: 0 1rem 2rem 0 rgba(0,0,0,0.2);
+    border-radius:5rem;
+    background:white;
+    transition:0.6s width;
+    will-change:contents;
+}
+ 
+.profile__header{
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    height:10rem;
+    background-size: 100% 100%;
+    position:relative;
+    background: url("/img/pexels-magda-ehlers-1279813.jpg");
+    background-size: cover;
+}
+
+.profile__header--second{
+    background: url("/img/pexels-scott-webb-430207.jpg");
+    background-size: cover;
+
+}
+
+.profile__header--third{
+    background: url("/img/pexels-sharon-mccutcheon-1566909.jpg");
+    background-size: cover;
+}
+
+.profile__body{
+    font-size: 80%;
+    height:6rem;
+    transition:0s;
+    transition: 0.6s;
+    transition-delay: 0.6s;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile__body p{
+    opacity:0;
+    padding: 2rem;
+    transition:0s;
+    transition-delay: 0s;
+ 
+}
+
+.profile:hover{
+    width:40rem;
+}
+
+.profile:hover .profile__body{
+    height:40rem;
+}
+
+.profile:hover .profile__body p{
+    opacity:1;   
+    transition:0.8s;
+    transition-delay: 1.2s;
+}
+
+.profile__footer{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:2rem;
+    gap:2rem;
+}
+
+.heart{
+    width: 2.2rem;
+    height:2.2rem;
+    position: relative;
+    transform:rotate(45deg);
+    background:red;
+    opacity:0;
+}
+
+.heart::before, .heart::after{
+    content:"";
+    position: absolute;
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+    background:red;
+}
+
+
+.heart::before{
+    transform:translateX(-50%);
+}
+
+.heart::after{
+    transform:translateY(-50%);
+}
+
+.profile:hover .profile__footer .heart{
+    transition:0.8s;
+    transition-delay: 1.5s;
+    opacity:1;
+}
+
+@media screen and (max-width: 50rem) {
+    .profile{
+        width:40rem;
+    }
+
+    .profile__body{
+        height:40rem;
+    }
+    .profile__body p {
+        opacity:1;
+    }
+    .heart{
+        opacity:1;
+    }
+}
